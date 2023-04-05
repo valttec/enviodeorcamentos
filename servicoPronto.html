@@ -42,9 +42,11 @@
 			  <input type="text" class="form-control" id="atendente" placeholder="Atendente*">
 			  <label for="atendente">Atendente*</label>
 			</div>
+		
 						<div class="d-grid gap-2 mt-2">
-						  <a class="btn btn btn btn-dark" href="servicoPronto.html" type="button" title="Enviar orçamento">Serviço pronto</a>
+						  <a class="btn btn btn btn-dark" href="index.html" type="button" title="Enviar orçamento">Enviar orçamento</a>
 						</div>
+	
 			</div>
 				<div class="col-6">
 				
@@ -69,20 +71,7 @@
 						
 						</div>
 						
-						<div class="form-floating">
-						  <textarea class="form-control" placeholder="Laudo" id="laudo" style="height: 100px"></textarea>
-						  <label for="laudo">Laudo</label>
-						</div>
-						
-						<div class="form-floating mt-2">
-						  <textarea class="form-control" placeholder="Solução" id="solucao" style="height: 100px"></textarea>
-						  <label for="solucao">Solução</label>
-						</div>
-						
-						<div class="form-floating mt-2">
-						  <textarea class="form-control" placeholder="Orçamento" id="orcamento" style="height: 100px"></textarea>
-						  <label for="orcamento">Orçamento</label>
-						</div>
+					
 						
 						<div class="d-grid gap-2 mt-2">
 						  <button class="btn btn-success" type="button" onclick="generateLink()" title="Enviar orçamento">Enviar</button>
@@ -133,12 +122,9 @@ function generateLink() {
   let atendente = document.getElementById('atendente').value;
   let nomeCliente = document.getElementById('client').value;
   let numerOS = document.getElementById('os').value;
-  let laudo = document.getElementById('laudo').value;
-  let solucao = document.getElementById('solucao').value;
-  let orcamento = document.getElementById('orcamento').value;
-  let cabecalho = "Olá "+comp+" senhor(a) "+nomeCliente+", me chamo "+atendente+" e falo da *AstecByte assistência técnica*, passando para informar sobre sua Ordem de Serviço Nº: "+numerOS;
-  let rodape = "Garantia de serviços 30 dias. \n\n Garantia de peças 90 dias. \n\n Responda com *APROVADO* ou *REPROVADO* para prosseguirmos com sua ordem de serviço.";
-  let texto = cabecalho+"\n\n *Laudo:*\n"+laudo+"\n\n *Solução:*\n"+solucao+"\n\n *orçamento:*\n"+orcamento+"\n\n"+rodape;
+ 
+ 
+  let texto = comp+" senhor(a) "+nomeCliente+", me chamo "+atendente+" e falo da *AstecByte assistência técnica*, passando para informar que o equipamento da *Ordem de serviço Nº "+numerOS+"* esta pronto.";
   
    texto = window.encodeURIComponent(texto);
    if(fone != "" && atendente != ""){
@@ -153,10 +139,6 @@ function limpa(){
 document.getElementById('numero').value ="";
 document.getElementById('client').value ="";
 document.getElementById('os').value ="";
-document.getElementById('laudo').value="";
-document.getElementById('solucao').value="";
-document.getElementById('orcamento').value="";
-
 }
 
 
